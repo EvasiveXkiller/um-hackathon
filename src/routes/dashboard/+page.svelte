@@ -20,6 +20,8 @@
 			<Form method="POST" action="/logout">
 				<Button type="submit" >Logout</Button>
 			</Form>
+
+			<Button href="/dashboard/update-health">Update your situation on the living thing in your tummy</Button>
 		</div>
 	</div>
 	<Spacer height="64px"/>
