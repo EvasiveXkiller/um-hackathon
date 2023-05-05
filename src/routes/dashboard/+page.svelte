@@ -22,6 +22,8 @@
 			</Form>
 
 			<Button href="/dashboard/update-health">Update your situation on the living thing in your tummy</Button>
+
+			<Button href="/dashboard/shop">Shop</Button>
 		</div>
 	</div>
 	<Spacer height="64px"/>
