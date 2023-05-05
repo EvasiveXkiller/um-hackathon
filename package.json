@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@vite-pwa/sveltekit": "^0.2.1",
 		"fuse.js": "^6.6.2"
 	}
 }
