@@ -41,6 +41,11 @@
 				</FormGroup>
 				<Button type="submit">Submit</Button>
 			</Form>
+
+			<h3>Have an account?</h3>
+			<p>
+				<Button href="/login">Login</Button>
+			</p>
 		</div>
 	</div>
 	<Spacer height="64px"/>

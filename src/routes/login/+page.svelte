@@ -32,11 +32,19 @@
 				</FormGroup>
 				<FormGroup>
 					<Button size="default" type="submit">Submit</Button>
-					<Spacer/>
-					<Button size="default" kind="danger-tertiary">Forgot Password?</Button>
+					<Button size="default" kind="secondary" href='/register'>Register</Button>
 				</FormGroup>
 
+
 			</Form>
+			<div class="text-clamp text-justify">
+				<h3>Forgotten your password?</h3>
+				<Spacer height="16px"/>
+				<p>
+					<Button size="default" kind="danger-tertiary">Reset Password</Button>
+
+				</p>
+			</div>
 		</div>
 	</div>
 	<Spacer height="64px"/>

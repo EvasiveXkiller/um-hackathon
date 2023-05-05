@@ -47,18 +47,12 @@
 				<div class="grid place-items-center w-full">
 					<div class="flex flex-row w-full flex-wrap gap-12 justify-around items-center">
 						<div class="text-clamp text-justify">
-							<h3>Privacy. Restored</h3>
+							<h3>New Life, a new life system for those in need</h3>
 							<Spacer height="16px"/>
 							<p>
-								Dont worry your data will be safe...
 								<br>
-								This paragraph was a waste of time and space. If you had not read this and I had not
-								typed this you and I could’ve done something more productive than reading this
-								mindlessly and carelessly as if you did not have anything else to do in life. Life is so
-								precious because it is short and you are being so careless that you do not realize it
-								until now since this void paragraph mentions that you are doing something so mindless,
-								so stupid, so careless that you realize that you are not using your time wisely. You
-								could’ve been playing with your dog, or eating your cat, but no.
+								New Life, A Pregnancy Management System catered to help improve the mother’s quality of
+								life
 							</p>
 						</div>
 						<div class="text-clamp text-justify">
