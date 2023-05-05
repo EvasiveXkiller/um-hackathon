@@ -3,7 +3,7 @@
 		Form,
 		FormGroup,
 		Checkbox,
-		Button, PasswordInput, TextInput,
+		Button, PasswordInput, TextInput, Link,
 	} from "carbon-components-svelte";
 	import Spacer from "$lib/components/Spacer.svelte";
 </script>
@@ -17,7 +17,9 @@
 
 			<p>Here lies the lost thought of a midnight programmer</p>
 
-			<Button href="/logout">Logout</Button>
+			<Form method="POST" action="/logout">
+				<Button type="submit" >Logout</Button>
+			</Form>
 		</div>
 	</div>
 	<Spacer height="64px"/>
