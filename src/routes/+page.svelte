@@ -10,6 +10,7 @@
 	<div class="centerRenderer">
 		<div class="flex flex-col gap-6" style="width: 85vw">
 			<div class="flex flex-row flex-wrap gap-6 justify-around items-center min-h-[50vh]">
+				<Spacer height="64px"/>
 				<div>
 					<div class="top">
 						<h1 class="text-6xl">Aaron's Maternity System</h1>
