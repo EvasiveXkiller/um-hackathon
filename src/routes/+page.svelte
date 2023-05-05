@@ -1,5 +1,5 @@
 <script>
-	import Spacer from "../lib/Spacer.svelte";
+	import Spacer from "$lib/components/Spacer.svelte";
 	import {
 		Button,
 	} from "carbon-components-svelte";
@@ -19,14 +19,14 @@
 					</div>
 					<Spacer height="32px"/>
 					<div class="morebottom">
-						<Button href="/login" target="_blank" kind="primary"
+						<Button href="/login" kind="primary"
 						>Login
 						</Button>
 					</div>
 					<Spacer/>
 					<div class="morebottom">
-						<Button href="/login" target="_blank" kind="secondary"
-						>Sign Up
+						<Button href="/register" kind="secondary"
+						>Register
 						</Button>
 					</div>
 				</div>

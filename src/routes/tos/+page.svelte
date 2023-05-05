@@ -1,5 +1,5 @@
 <script>
-	import Spacer from '$lib/Spacer.svelte';
+	import Spacer from '$lib/components/Spacer.svelte';
 	import { OutboundLink } from 'carbon-components-svelte';
 </script>
 

@@ -6,7 +6,7 @@
 	import {
 		Breakpoint,
 	} from 'carbon-components-svelte';
-	import Spacer from '$lib/Spacer.svelte';
+	import Spacer from '$lib/components/Spacer.svelte';
 
 </script>
 
