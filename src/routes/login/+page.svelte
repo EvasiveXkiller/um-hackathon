@@ -37,14 +37,15 @@
 
 
 			</Form>
-			<div class="text-clamp text-justify">
-				<h3>Forgotten your password?</h3>
-				<Spacer height="16px"/>
-				<p>
-					<Button size="default" kind="danger-tertiary">Reset Password</Button>
+<!-- Removed reset password coz it probably wont work for the moment -->
+<!--			<div class="text-clamp text-justify">-->
+<!--				<h3>Forgotten your password?</h3>-->
+<!--				<Spacer height="16px"/>-->
+<!--				<p>-->
+<!--					<Button size="default" kind="danger-tertiary">Reset Password</Button>-->
 
-				</p>
-			</div>
+<!--				</p>-->
+<!--			</div>-->
 		</div>
 	</div>
 	<Spacer height="64px"/>
