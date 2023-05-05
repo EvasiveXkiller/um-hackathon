@@ -6,6 +6,7 @@
 		Button, PasswordInput, TextInput, Link, SelectableTile, Modal, SkeletonPlaceholder,
 	} from "carbon-components-svelte";
 	import Spacer from "$lib/components/Spacer.svelte";
+	import { skills } from "$lib/static/skills.ts";
 
 	let open = false;
 	let isSelected = false;
@@ -30,9 +31,9 @@
 			<h1>Tasks</h1>
 
 			<div role="group" aria-label="selectable tiles">
-				<SelectableTile disabled={isSelected} on:select={() => (open = true)}>Task 1</SelectableTile>
-				<SelectableTile selected>Task 2</SelectableTile>
-				<SelectableTile>Task 3</SelectableTile>
+				{#each skills as skill}
+					<SelectableTile disabled={isSelected} on:select={() => (open = true)}>{skill.key}</SelectableTile>
+				{/each}
 			</div>
 
 			<Modal
