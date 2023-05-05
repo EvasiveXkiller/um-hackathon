@@ -1,7 +1,8 @@
 <script>
 	import Spacer from "$lib/components/Spacer.svelte";
+	import logo from "$lib/assets/logo.png";
 	import {
-		Button,
+		Button, ImageLoader, Theme,
 	} from "carbon-components-svelte";
 </script>
 
@@ -31,7 +32,7 @@
 					</div>
 				</div>
 				<div style="max-width: 250px">
-					<div>Insert some Aaron's future baby image here</div>
+					<ImageLoader src="{logo}"/>
 				</div>
 			</div>
 

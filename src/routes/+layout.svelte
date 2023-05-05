@@ -1,9 +1,10 @@
 <script>
 	import "../app.css";
-	import 'carbon-components-svelte/css/g90.css';
+	import 'carbon-components-svelte/css/white.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { page } from '$app/stores'
+	import { Theme } from "carbon-components-svelte";
 
 	export let segment;
 
@@ -11,14 +12,23 @@
 	let innerHeight = 0;
 </script>
 
-<Header {segment} />
+<Theme
+		theme="white"
+		tokens={{
+    "interactive-01": "#6929C4",
+    "hover-primary": "#6929C4",
+    "active-primary": "#6929C4",
+  }}
+/>
 
-<svelte:window bind:innerHeight />
+<Header {segment}/>
+
+<svelte:window bind:innerHeight/>
 <main bind:offsetHeight class='overflow-hidden'>
-	<slot />
+	<slot/>
 </main>
 <footer class:stuck={offsetHeight < innerHeight}>
-	<Footer />
+	<Footer/>
 </footer>
 
 <style>

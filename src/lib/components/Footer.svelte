@@ -1,10 +1,13 @@
 <script>
-	import { Link, Tile } from 'carbon-components-svelte';
+	import { ImageLoader, Link, Tile } from 'carbon-components-svelte';
+	import logo from '$lib/assets/logo.png'
 </script>
 
 <Tile class="footer-under">
 	<div class="footer-container">
-		<div>Insert some Aaron's future baby image here</div>
+		<div style="max-width: 100px">
+			<ImageLoader src="{logo}" />
+		</div>
 		<div class="flex flex-wrap justify-evenly flex-col">
 			<p>
 				<i>AMS | Aaron's Maternity System</i>
