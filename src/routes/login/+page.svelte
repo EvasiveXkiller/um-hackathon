@@ -1,11 +1,13 @@
-<script>
+<script lang="ts">
 	import {
 		Form,
 		FormGroup,
 		Checkbox,
-		Button, PasswordInput, TextInput,
+		Button, PasswordInput, TextInput, InlineNotification,
 	} from "carbon-components-svelte";
 	import Spacer from "$lib/components/Spacer.svelte";
+
+	export let form;
 </script>
 
 <container class="w-screen grid place-items-center">
@@ -15,7 +17,13 @@
 
 			<h1>Welcome back!</h1>
 
-			<p></p>
+			{#if form?.credentials}
+				<InlineNotification>
+					<strong slot="title">Error: </strong>
+					<strong slot="subtitle">Username or Password is incorrect</strong>
+				</InlineNotification>
+			{/if}
+
 			<Form on:submit method="POST">
 				<FormGroup>
 					<TextInput labelText="Email Address" placeholder="joe@example.com" required name="email"/>

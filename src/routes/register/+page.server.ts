@@ -1,6 +1,6 @@
 import type { Actions } from './$types';
 import { database } from "../../lib/server/database/driver";
-import { error, redirect } from "@sveltejs/kit";
+import { error, fail, redirect } from "@sveltejs/kit";
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcrypt'
 
@@ -13,7 +13,7 @@ export const actions = {
 		const ifUserExists = database.prepare('SELECT * FROM users where email = (?)').all(email)
 
 		if (ifUserExists.length > 0) {
-			throw error(400, 'Client exists!');
+			return fail(400, { exists: true })
 		}
 
 		const passwordHashed = await bcrypt.hash(password, 10);

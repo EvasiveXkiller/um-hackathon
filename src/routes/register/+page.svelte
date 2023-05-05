@@ -3,9 +3,11 @@
 		Form,
 		FormGroup,
 		Checkbox,
-		Button, PasswordInput, TextInput,
+		Button, PasswordInput, TextInput, InlineNotification,
 	} from "carbon-components-svelte";
 	import Spacer from "$lib/components/Spacer.svelte";
+
+	export let form;
 </script>
 
 <container class="w-screen grid place-items-center">
@@ -17,6 +19,13 @@
 
 			<p>We have never been more excited to have you onboard! Just fill in a few short information to get
 				started!</p>
+
+			{#if form?.exists}
+				<InlineNotification>
+					<strong slot="title">Error: </strong>
+					<strong slot="subtitle">User Exists! Please login using credentials</strong>
+				</InlineNotification>
+			{/if}
 			<Form on:submit method="POST">
 				<FormGroup>
 					<TextInput labelText="Email Address" placeholder="joe@example.com" required name="email"/>

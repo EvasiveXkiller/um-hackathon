@@ -1,6 +1,6 @@
 import type { Actions } from './$types';
 import { database } from "../../lib/server/database/driver";
-import { error, redirect } from "@sveltejs/kit";
+import { error, fail, redirect } from "@sveltejs/kit";
 import bcrypt from 'bcrypt'
 import * as crypto from "crypto";
 
@@ -15,7 +15,7 @@ export const actions = {
 		const user = database.prepare('SELECT * FROM users WHERE email = (?)').all(email);
 
 		if (user.length !== 1) {
-			throw error(400, 'user not found');
+			return fail(400, { credentials: true })
 		}
 
 		const userDetails = database.prepare('SELECT * FROM users WHERE email = (?)').get(email);
@@ -45,6 +45,6 @@ export const actions = {
 			throw redirect(303, '/dashboard');
 		}
 
-		throw error(400, 'password incorrect');
+		return fail(400, { credentials: true })
 	},
 } satisfies Actions;
