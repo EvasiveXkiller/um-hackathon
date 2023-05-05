@@ -16,17 +16,13 @@
 			link: '/'
 		},
 		{
-			text: 'About Us',
-			link: '/about'
+			text: 'Dashboard',
+			link: '/dashboard'
 		},
 		{
-			text: 'Pricing',
-			link: '/pricing'
+			text: 'Shop',
+			link: '/dashboard/shop'
 		},
-		{
-			text: 'Contact Us',
-			link: '/contact'
-		}
 	];
 </script>
 

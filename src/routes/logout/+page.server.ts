@@ -8,7 +8,7 @@ export const load: PageServerLoad = async () => {
 }
 
 export const actions: Actions = {
-	default({cookies}) {
+	GET({cookies}) {
 		// eat the cookie
 		cookies.set('session', '', {
 			path: '/',

@@ -1,0 +1,9 @@
+export const skills = {
+	PIANO: 100,
+	WRITING: 200,
+	PAINTING: 300,
+	EATING: 50,
+	WALKING: 100,
+	RUNNING: 500,
+	READING: 1000
+}

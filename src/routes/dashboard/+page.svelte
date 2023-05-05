@@ -3,9 +3,10 @@
 		Form,
 		FormGroup,
 		Checkbox,
-		Button, PasswordInput, TextInput, Link, SelectableTile, Modal,
+		Button, PasswordInput, TextInput, Link, SelectableTile, Modal, SkeletonPlaceholder,
 	} from "carbon-components-svelte";
 	import Spacer from "$lib/components/Spacer.svelte";
+
 	let open = false;
 	let isSelected = false;
 </script>
@@ -19,13 +20,12 @@
 
 			<p>Here lies the lost thought of a midnight programmer</p>
 
-			<Form method="POST" action="/logout">
-				<Button type="submit" >Logout</Button>
+			<Form method="POST" action="/logout?/GET">
+				<Button href="/dashboard/shop">Shop</Button>
+				<Button type="submit">Logout</Button>
 			</Form>
 
-			<Button href="/dashboard/update-health">Update your situation on the living thing in your tummy</Button>
-
-			<Button href="/dashboard/shop">Shop</Button>
+			<SkeletonPlaceholder style="height: 12rem; width: 100vh"/>
 
 			<h1>Tasks</h1>
 
@@ -37,7 +37,7 @@
 
 			<Modal
 					bind:open
-					modalHeading="Create database"
+					modalHeading="Upload Image Modal"
 					primaryButtonText="Confirm"
 					secondaryButtonText="Cancel"
 					on:click:button--secondary={() => (open = false)}
@@ -45,7 +45,8 @@
 					on:close={() => {isSelected = false}}
 					on:submit
 			>
-				<p>Create a new Cloudant database in the US South region.</p>
+				<p>insert upload logic here</p>
+				<p>this might be helpful https://hartenfeller.dev/blog/sveltekit-image-upload-store</p>
 			</Modal>
 
 		</div>
