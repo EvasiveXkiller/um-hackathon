@@ -10,8 +10,19 @@ export const load: PageServerLoad = async ({locals}) => {
 
 	const user = database.prepare('SELECT * FROM users WHERE id = ?').get(locals.user.id)
 
-	console.log(user)
 	if (!user.age) {
 		throw redirect(302, '/getting-started/1')
+	} else {
+		return {
+			userData: [
+				{key: "id", value: user.id},
+				{key: "email", value: user.email},
+				{key: "coins", value: user.coins},
+				{key: "age", value: user.age},
+				{key: "weight", value: user.weight},
+				{key: "disease", value: user.diseases},
+				{key: "height", value: user.height},
+			]
+		}
 	}
 }

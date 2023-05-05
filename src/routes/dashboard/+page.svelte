@@ -3,10 +3,20 @@
 		Form,
 		FormGroup,
 		Checkbox,
-		Button, PasswordInput, TextInput, Link, SelectableTile, Modal, SkeletonPlaceholder,
+		Button,
+		PasswordInput,
+		TextInput,
+		Link,
+		SelectableTile,
+		Modal,
+		SkeletonPlaceholder,
+		StructuredListCell,
+		StructuredListRow, StructuredListHead, StructuredListBody, StructuredList,
 	} from "carbon-components-svelte";
 	import Spacer from "$lib/components/Spacer.svelte";
 	import { skills } from "$lib/static/skills.ts";
+
+	export let data;
 
 	let open = false;
 	let isSelected = false;
@@ -21,10 +31,26 @@
 
 			<p>Here lies the lost thought of a midnight programmer</p>
 
+			<h3>Your Details</h3>
+
 			<Form method="POST" action="/logout?/GET">
 				<Button href="/dashboard/shop">Shop</Button>
 				<Button type="submit">Logout</Button>
 			</Form>
+
+			<StructuredList>
+				<StructuredListHead>
+					<StructuredListRow head/>
+				</StructuredListHead>
+				<StructuredListBody>
+					{#each data.userData as keyedData}
+						<StructuredListRow>
+							<StructuredListCell noWrap>{keyedData.key}</StructuredListCell>
+							<StructuredListCell>{keyedData.value}</StructuredListCell>
+						</StructuredListRow>
+					{/each}
+				</StructuredListBody>
+			</StructuredList>
 
 			<SkeletonPlaceholder style="height: 12rem; width: 100vh"/>
 
