@@ -52,7 +52,7 @@
 				</StructuredListBody>
 			</StructuredList>
 
-			<SkeletonPlaceholder style="height: 12rem; width: 100vh"/>
+			<SkeletonPlaceholder style="width: 100%"/>
 
 			<h1>Tasks</h1>
 
