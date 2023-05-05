@@ -1,7 +1,7 @@
 import type { Handle } from '@sveltejs/kit'
 import { database } from "./lib/server/database/driver";
 
-export const handle: Handle = async ({ event, resolve }) => {
+export const handle: Handle = async ({event, resolve}) => {
 	// get cookies from browser
 	const session = event.cookies.get('session')
 
@@ -18,6 +18,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	if (user) {
 		event.locals.user = {
 			name: user.displayName,
+			id: user.id
 		}
 	}
 

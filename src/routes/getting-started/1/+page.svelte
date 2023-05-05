@@ -1,7 +1,3 @@
-<script context="module">
-	export const prerender = true;
-</script>
-
 <script>
 	import {
 		Breakpoint, Button, Checkbox, Form, FormGroup, RadioButton, RadioButtonGroup, Select, SelectItem, TextInput,
@@ -26,10 +22,10 @@
 			<p>Now enter your personal details</p>
 
 			<!--			Below this does not inject any info yet-->
-			<Form on:submit method="POST" action="/getting-started/2">
+			<Form on:submit method="POST">
 				<TextInput labelText="Age" placeholder="Eg. 18" required name="age"/>
 				<TextInput labelText="Height (CM)" placeholder="Eg.185" required name="height"/>
-				<TextInput labelText="Weight (KG)" placeholder="Eg. 35" required name="Weight"/>
+				<TextInput labelText="Weight (KG)" placeholder="Eg. 35" required name="weight"/>
 				<Spacer></Spacer>
 				<Button type="submit">Continue</Button>
 			</Form>

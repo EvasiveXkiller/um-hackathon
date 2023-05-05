@@ -13,7 +13,7 @@ export const actions = {
 		const ifUserExists = database.prepare('SELECT * FROM users where email = (?)').all(email)
 
 		if (ifUserExists.length > 0) {
-			return fail(400, { exists: true })
+			return fail(400, {exists: true})
 		}
 
 		const passwordHashed = await bcrypt.hash(password, 10);
@@ -24,6 +24,6 @@ export const actions = {
 			authToken: crypto.randomUUID()
 		})
 
-		throw redirect(303, '/')
+		throw redirect(303, '/register/success')
 	},
 } satisfies Actions;

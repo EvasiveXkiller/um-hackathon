@@ -26,6 +26,8 @@
 		'Hypertension (Not induced by Pregnancy)',
 		'Others'
 	]
+
+	let selectedDiseases = [];
 </script>
 
 <svelte:head>
@@ -42,9 +44,12 @@
 			<p>Please select the disease you posses</p>
 
 			<!--			Below this does not inject any info yet-->
-			<Form on:submit method="POST" action="/getting-started/2">
-
+			<Form on:submit method="POST">
 				<MultiSelect
+						on:select={(value)=> {
+							selectedDiseases = value.detail.selected.map(disease => {return disease.text});
+							console.log(selectedDiseases)
+						}}
 						light
 						filterable
 						titleText="You may select multiple diseases"
@@ -58,6 +63,7 @@
                             { id: "5", text: "Others" },
                         ]}
 				/>
+				<input type="hidden" name="diseases" value={selectedDiseases.toString()}/>
 				<Spacer></Spacer>
 				<Button type="submit">Continue</Button>
 			</Form>
