@@ -3,7 +3,7 @@
 		Form,
 		FormGroup,
 		Checkbox,
-		Button, PasswordInput, TextInput, InlineNotification,
+		Button, PasswordInput, TextInput, InlineNotification, FluidForm,
 	} from "carbon-components-svelte";
 	import Spacer from "$lib/components/Spacer.svelte";
 
@@ -24,28 +24,29 @@
 				</InlineNotification>
 			{/if}
 
-			<Form on:submit method="POST">
+			<FluidForm on:submit method="POST">
 				<FormGroup>
 					<TextInput labelText="Email Address" placeholder="joe@example.com" required name="email"/>
 					<Spacer></Spacer>
 					<PasswordInput labelText="Password" placeholder="Enter password..." required name="password"/>
 				</FormGroup>
+				<Spacer/>
 				<FormGroup>
 					<Button size="default" type="submit">Submit</Button>
 					<Button size="default" kind="secondary" href='/register'>Register</Button>
 				</FormGroup>
 
 
-			</Form>
-<!-- Removed reset password coz it probably wont work for the moment -->
-<!--			<div class="text-clamp text-justify">-->
-<!--				<h3>Forgotten your password?</h3>-->
-<!--				<Spacer height="16px"/>-->
-<!--				<p>-->
-<!--					<Button size="default" kind="danger-tertiary">Reset Password</Button>-->
+			</FluidForm>
+			<!-- Removed reset password coz it probably wont work for the moment -->
+			<!--			<div class="text-clamp text-justify">-->
+			<!--				<h3>Forgotten your password?</h3>-->
+			<!--				<Spacer height="16px"/>-->
+			<!--				<p>-->
+			<!--					<Button size="default" kind="danger-tertiary">Reset Password</Button>-->
 
-<!--				</p>-->
-<!--			</div>-->
+			<!--				</p>-->
+			<!--			</div>-->
 		</div>
 	</div>
 	<Spacer height="64px"/>

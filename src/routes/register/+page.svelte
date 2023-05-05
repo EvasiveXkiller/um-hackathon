@@ -3,7 +3,7 @@
 		Form,
 		FormGroup,
 		Checkbox,
-		Button, PasswordInput, TextInput, InlineNotification,
+		Button, PasswordInput, TextInput, InlineNotification, FluidForm,
 	} from "carbon-components-svelte";
 	import Spacer from "$lib/components/Spacer.svelte";
 
@@ -26,7 +26,7 @@
 					<strong slot="subtitle">User Exists! Please login using credentials</strong>
 				</InlineNotification>
 			{/if}
-			<Form on:submit method="POST">
+			<FluidForm on:submit method="POST">
 				<FormGroup>
 					<TextInput labelText="Email Address" placeholder="joe@example.com" required name="email"/>
 					<Spacer></Spacer>
@@ -35,17 +35,20 @@
 					<Spacer></Spacer>
 					<PasswordInput labelText="Password" placeholder="Enter password..." required name="password"/>
 				</FormGroup>
+				<Spacer/>
 				<FormGroup legendText="Checkboxes">
 					<Checkbox id="checkbox-0"
 					          labelText="I agree to whatever is going on with my data and i wont sue you " required/>
 				</FormGroup>
+				<Spacer/>
 				<Button type="submit">Submit</Button>
-			</Form>
+			</FluidForm>
 
 			<h3>Have an account?</h3>
 			<p>
 				<Button href="/login">Login</Button>
 			</p>
+			<Spacer/>
 		</div>
 	</div>
 	<Spacer height="64px"/>
