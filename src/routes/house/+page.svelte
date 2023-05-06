@@ -1,22 +1,10 @@
 <script>
 	import {
-		Form,
-		FormGroup,
-		Checkbox,
 		Button,
-		PasswordInput,
-		TextInput,
-		Link,
-		SelectableTile,
 		Modal,
-		SkeletonPlaceholder,
-		StructuredListCell,
-		StructuredListRow,
-		StructuredListHead,
-		StructuredListBody,
-		StructuredList,
+		SelectableTile,
 		InlineNotification,
-		NotificationActionButton, ImageLoader, InlineLoading, Tile, ExpandableTile,
+		ImageLoader, InlineLoading, ExpandableTile,
 	} from "carbon-components-svelte";
 	import first from "$lib//assets/home/first.png"
 	import second from "$lib//assets/home/second.png"

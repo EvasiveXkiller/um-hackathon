@@ -40,7 +40,18 @@
 		const riskLevel = classes[outputTensor.data.indexOf(Math.max(...outputTensor.data))]
 		console.log(riskLevel)
 		alert(`Your Baby is ${riskLevel}`)
-		window.location = '/dashboard'
+		switch (riskLevel) {
+			case 'Low Risk':
+				window.location = '/timeline/low-risk'
+				break;
+			case 'Medium Risk':
+				window.location = '/timeline/medium-risk'
+				break;
+			case 'High Risk':
+				window.location = '/timeline/high-risk'
+				break;
+		}
+
 	}
 
 	test()
