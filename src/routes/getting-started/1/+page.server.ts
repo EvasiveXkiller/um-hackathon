@@ -42,7 +42,7 @@ export const actions = {
 		for (const itask of validTasks) {
 			database.prepare('INSERT INTO tasks (id, taskName, taskCompleted, currentlyActive) VALUES (@id, @taskName, @taskCompleted, @currentlyActive)').run({
 				id: ID,
-				task: itask,
+				taskName: itask,
 				taskCompleted: 0,
 				currentlyActive: 0,
 			});

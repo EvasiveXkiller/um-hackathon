@@ -11,15 +11,24 @@
 		Modal,
 		SkeletonPlaceholder,
 		StructuredListCell,
-		StructuredListRow, StructuredListHead, StructuredListBody, StructuredList,
+		StructuredListRow, StructuredListHead, StructuredListBody, StructuredList, InlineNotification,
 	} from "carbon-components-svelte";
 	import Spacer from "$lib/components/Spacer.svelte";
-	import { skills } from "$lib/static/skills.ts";
 
 	export let data;
 
 	let open = false;
 	let isSelected = false;
+	let currentlySelectedTask = {};
+
+	let uploadedImage;
+
+	function handleImageUpload(e) {
+		const image = (e.target)?.files?.[0];
+		if (!image) return;
+		// URL.createObjectURL() creates a temporary URL for the image we can use as src for an img tag
+		uploadedImage = URL.createObjectURL(image);
+	}
 </script>
 
 <container class="w-screen grid place-items-center">
@@ -59,9 +68,23 @@
 
 			<h1>Tasks</h1>
 
+
+			{#if data.isTaskEmpty}
+				<InlineNotification
+						title="Note: "
+						subtitle="Please update your health info to start your personalized task!"
+				/>
+			{/if}
+
 			<div role="group" aria-label="selectable tiles">
-				{#each skills as skill}
-					<SelectableTile disabled={isSelected} on:select={() => (open = true)}>{skill.key}</SelectableTile>
+				{#each data.userTasks as validTasks}
+					<SelectableTile disabled={!Number(validTasks.currentlyActive) == 1}
+					                selected="{Number(validTasks.taskCompleted) == 1}"
+					                on:select={() => {
+										if(Number(validTasks.taskCompleted) == 1) return
+										currentlySelectedTask = validTasks;
+										open = true;
+					                }}>{validTasks.taskName}</SelectableTile>
 				{/each}
 			</div>
 
@@ -77,7 +100,32 @@
 			>
 				<h1>Please upload your image of your task here</h1>
 				<p>This is to proof that you have completed your task</p>
-				<p>this might be helpful https://hartenfeller.dev/blog/sveltekit-image-upload-store</p>
+				<Spacer></Spacer>
+
+				<form method="post" enctype="multipart/form-data">
+					<input type="hidden" name="taskName" value={currentlySelectedTask.taskName}/>
+					<input type="hidden" name="userID" value={currentlySelectedTask.id}/>
+					<input type="file" name="taskImage" accept="image/*" on:change={handleImageUpload}/>
+
+					{#if uploadedImage}
+						<div class="mt-4">
+							<img src={uploadedImage} style="max-width: 50%;" alt=""/>
+						</div>
+					{/if}
+
+					<div class="mt-4 mb-6">
+						<Button
+								class="button is-primary is-disabled"
+								type="submit"
+								formaction="?/completeTask"
+								disabled={!uploadedImage ?? null}
+						>Upload Image
+						</Button>
+					</div>
+				</form>
+
+
+				<!--				<p>this might be helpful https://hartenfeller.dev/blog/sveltekit-image-upload-store</p>-->
 			</Modal>
 
 		</div>
