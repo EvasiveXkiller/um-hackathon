@@ -52,10 +52,10 @@ export const actions = {
 			headers: {'Content-Type': 'application/json'}
 		})
 
-		const data = await response.json();
+		const responseData = await response.json();
 
 		// Do something about the response, should be in json also, probably can stringify it, insert into database, then pull it out and use it somewhere else
-		console.log(data)
+		console.log(responseData);
 
 		throw redirect(302, '/dashboard')
 	},
