@@ -38,25 +38,30 @@ export const actions = {
 
 		//Arrange data into nice format
 		const toSend = {
-			sys: sys,
-			dias: dia,
-			sugar: sugar,
-			temp: temp,
-			hr: hr
+			age: Number(user.age),
+			sys: Number(sys),
+			dias: Number(dia),
+			sugar: Number(sugar),
+			temp: Number(temp),
+			hr: Number(hr)
 		}
 
-		//Build the request
-		const response = await fetch("127.0.0.1:5555/api/v1/aaronloveszijian", {
-			method: "POST",
-			body: JSON.stringify(toSend),
-			headers: {'Content-Type': 'application/json'}
-		})
+		const encodeGetParams = p =>
+			Object.entries(p).map(kv => kv.map(encodeURIComponent).join("=")).join("&");
 
-		const responseData = await response.json();
-
-		// Do something about the response, should be in json also, probably can stringify it, insert into database, then pull it out and use it somewhere else
-		console.log(responseData);
-
-		throw redirect(302, '/dashboard')
+		throw redirect(301, `/compute?${encodeGetParams(toSend)}}`)
+		// //Build the request
+		// const response = await fetch("127.0.0.1:5555/api/v1/aaronloveszijian", {
+		// 	method: "POST",
+		// 	body: JSON.stringify(toSend),
+		// 	headers: {'Content-Type': 'application/json'}
+		// })
+		//
+		// const responseData = await response.json();
+		//
+		// // Do something about the response, should be in json also, probably can stringify it, insert into database, then pull it out and use it somewhere else
+		// console.log(responseData);
+		//
+		// throw redirect(302, '/dashboard')
 	},
 } satisfies Actions;

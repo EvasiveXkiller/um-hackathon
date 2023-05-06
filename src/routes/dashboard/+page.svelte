@@ -45,7 +45,7 @@
 			<Form method="POST" action="/logout?/GET">
 				<Button href="/dashboard/shop">Shop</Button>
 				<Spacer></Spacer>
-				<Button href="/dashboard/update-health">Update your health status here</Button>
+				<Button href="/dashboard/analyze">Analyze your status</Button>
 				<Spacer></Spacer>
 				<Button href="/feed">Feed</Button>
 				<Spacer></Spacer>

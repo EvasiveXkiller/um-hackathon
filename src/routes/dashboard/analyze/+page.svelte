@@ -25,9 +25,9 @@
 	<div class="centerRenderer">
 		<div class="flex flex-col gap-6" style="width: 75vw">
 			<Spacer height="64px"/>
-			<h1>Update your health status</h1>
+			<h1>Analyze your baby situation</h1>
 
-			<p>Enter the following data, to be analyzed by our trained professionals, to get a set to recommended daily tasks</p>
+			<p>Enter the following data, to be analyzed by our AI model</p>
 
 			<Form on:submit method="POST">
 				<NumberInput min={0} step={0.1} label="Systolic Blood Pressure (mmHg)" required name="systolic"/>
@@ -40,7 +40,7 @@
 				<Spacer/>
 				<Button href="/dashboard" kind="danger-tertiary">Cancel</Button>
 			</Form>
-			<Spacer height="64px" />
+			<Spacer height="64px"/>
 		</div>
 	</div>
 	<Spacer height="64px"/>
