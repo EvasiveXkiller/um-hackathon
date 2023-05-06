@@ -20,6 +20,8 @@
 		ImageLoader,
 	} from "carbon-components-svelte";
 	import Spacer from "$lib/components/Spacer.svelte";
+	import Add from "carbon-icons-svelte/lib/Add.svelte";
+	import { Login, ThumbsDownFilled, ThumbsUpFilled } from "carbon-icons-svelte";
 
 	export let data;
 
@@ -52,7 +54,13 @@
 					<Spacer/>
 					<p>{tiles.taskName}</p>
 					<Spacer/>
-					<ImageLoader src={`/api/v1/feed/${tiles.taskId}`} />
+					<ImageLoader src={`/api/v1/feed/${tiles.taskId}`}/>
+					<Spacer/>
+					<p>{tiles.taskLikes} likes</p>
+					<Form method="POST" action="?/upvote">
+						<input type="hidden" name="taskId" value={tiles.taskId}/>
+						<Button iconDescription="Login" icon={ThumbsUpFilled} type="submit"/>
+					</Form>
 				</Tile>
 			{/each}
 		</div>

@@ -39,6 +39,7 @@
 	"dependencies": {
 		"@vite-pwa/sveltekit": "^0.2.1",
 		"better-sqlite3": "^8.3.0",
+		"carbon-icons-svelte": "^11.4.0",
 		"fuse.js": "^6.6.2",
 		"node-fetch": "^3.3.1"
 	}
