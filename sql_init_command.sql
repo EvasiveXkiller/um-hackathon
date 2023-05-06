@@ -5,7 +5,8 @@ create table main.currentReadings
     dias_bp     text,
     blood_sugar text,
     temp        text,
-    hr          text
+    hr          text,
+    risk        text
 );
 
 create table main.tasks
@@ -23,7 +24,7 @@ create table main.tasks
     imageSize         integer
 );
 
-CREATE TABLE "users"
+create table main.users
 (
     id            text not null,
     email         text not null,
@@ -35,5 +36,5 @@ CREATE TABLE "users"
     weight        text,
     diseases      text,
     displayName   text
-)
+);
 
