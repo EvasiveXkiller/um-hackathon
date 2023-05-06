@@ -73,21 +73,36 @@
 							</ImageLoader>
 						{/if}
 					</div>
-					<div class="bottom">
-
-					</div>
-					<Spacer height="32px"/>
-					<div class="morebottom">
-						<Button href="" target="_blank">Play Music</Button>
-					</div>
 				</div>
 				<div style="max-width: 250px">
+
+
+					{#if data.percentageComplete >= 33.33 && data.percentageComplete <= 66.66}
+						<Button href="https://commons.wikimedia.org/wiki/File:Test-Logo.svg" target="_blank">Make a
+							drawing
+						</Button>
+					{:else}
+						<Button disabled href="https://commons.wikimedia.org/wiki/File:Test-Logo.svg" target="_blank">
+							Make a
+							drawing
+						</Button>
+					{/if}
+
+					<Spacer></Spacer>
+
+					{#if data.percentageComplete > 66.66}
+						<Button href="https://www.youtube.com/watch?v=cvh0nX08nRw" target="_blank">Play Music</Button>
+					{:else}
+						<Button disabled href="https://www.youtube.com/watch?v=cvh0nX08nRw" target="_blank">Play Music
+						</Button>
+					{/if}
+
+					<Spacer></Spacer>
 
 				</div>
 			</div>
 
 			<h1>Tasks</h1>
-
 
 			{#if data.isTaskEmpty}
 				<InlineNotification
