@@ -43,9 +43,9 @@
 			<h3>Your Details</h3>
 
 			<Form method="POST" action="/logout?/GET">
-				<Button href="/dashboard/shop">Shop</Button>
-				<Spacer></Spacer>
 				<Button href="/dashboard/analyze">Analyze your status</Button>
+				<Spacer></Spacer>
+				<Button href="/house">House</Button>
 				<Spacer></Spacer>
 				<Button href="/feed">Feed</Button>
 				<Spacer></Spacer>
@@ -66,69 +66,67 @@
 				</StructuredListBody>
 			</StructuredList>
 
-			<SkeletonPlaceholder style="width: 100%"/>
-
-			<h1>Tasks</h1>
+<!--			<h1>Tasks</h1>-->
 
 
-			{#if data.isTaskEmpty}
-				<InlineNotification
-						title="Note: "
-						subtitle="Please update your health info to start your personalized task!"
-				/>
-			{/if}
+<!--			{#if data.isTaskEmpty}-->
+<!--				<InlineNotification-->
+<!--						title="Note: "-->
+<!--						subtitle="Please update your health info to start your personalized task!"-->
+<!--				/>-->
+<!--			{/if}-->
 
-			<div role="group" aria-label="selectable tiles">
-				{#each data.userTasks as validTasks}
-					<SelectableTile disabled={!Number(validTasks.currentlyActive) == 1}
-					                selected="{Number(validTasks.taskCompleted) == 1}"
-					                on:select={() => {
-										if(Number(validTasks.taskCompleted) == 1) return
-										currentlySelectedTask = validTasks;
-										open = true;
-					                }}>{validTasks.taskName}</SelectableTile>
-				{/each}
-			</div>
+<!--			<div role="group" aria-label="selectable tiles">-->
+<!--				{#each data.userTasks as validTasks}-->
+<!--					<SelectableTile disabled={!Number(validTasks.currentlyActive) == 1}-->
+<!--					                selected="{Number(validTasks.taskCompleted) == 1}"-->
+<!--					                on:select={() => {-->
+<!--										if(Number(validTasks.taskCompleted) == 1) return-->
+<!--										currentlySelectedTask = validTasks;-->
+<!--										open = true;-->
+<!--					                }}>{validTasks.taskName}</SelectableTile>-->
+<!--				{/each}-->
+<!--			</div>-->
 
-			<Modal
-					bind:open
-					modalHeading="Upload Image Modal"
-					primaryButtonText="Confirm"
-					secondaryButtonText="Cancel"
-					on:click:button--secondary={() => (open = false)}
-					on:open={() => {isSelected = false}}
-					on:close={() => {isSelected = false}}
-					on:submit
-			>
-				<h1>Please upload your image of your task here</h1>
-				<p>This is to proof that you have completed your task</p>
-				<Spacer></Spacer>
+<!--			<Modal-->
+<!--					bind:open-->
+<!--					modalHeading="Upload Image Modal"-->
+<!--					primaryButtonText="Confirm"-->
+<!--					secondaryButtonText="Cancel"-->
+<!--					on:click:button&#45;&#45;secondary={() => (open = false)}-->
+<!--					on:open={() => {isSelected = false}}-->
+<!--					on:close={() => {isSelected = false}}-->
+<!--					on:submit-->
+<!--			>-->
+<!--				<h1>Please upload your image of your task here</h1>-->
+<!--				<p>This is to proof that you have completed your task</p>-->
+<!--				<Spacer></Spacer>-->
 
-				<form method="post" enctype="multipart/form-data">
-					<input type="hidden" name="taskName" value={currentlySelectedTask.taskName}/>
-					<input type="hidden" name="userID" value={currentlySelectedTask.userid}/>
-					<input type="file" name="taskImage" accept="image/*" on:change={handleImageUpload}/>
+<!--				<form method="post" enctype="multipart/form-data">-->
+<!--					<input type="hidden" name="taskName" value={currentlySelectedTask.taskName}/>-->
+<!--					<input type="hidden" name="userID" value={currentlySelectedTask.userid}/>-->
+<!--					<input type="file" name="taskImage" accept="image/*" on:change={handleImageUpload}/>-->
 
-					{#if uploadedImage}
-						<div class="mt-4">
-							<img src={uploadedImage} style="max-width: 50%;" alt=""/>
-						</div>
-					{/if}
+<!--					{#if uploadedImage}-->
+<!--						<div class="mt-4">-->
+<!--							<img src={uploadedImage} style="max-width: 50%;" alt=""/>-->
+<!--						</div>-->
+<!--					{/if}-->
 
-					<div class="mt-4 mb-6">
-						<Button
-								class="button is-primary is-disabled"
-								type="submit"
-								formaction="?/completeTask"
-								disabled={!uploadedImage ?? null}
-						>Upload Image
-						</Button>
-					</div>
-				</form>
+<!--					<div class="mt-4 mb-6">-->
+<!--						<Button-->
+<!--								class="button is-primary is-disabled"-->
+<!--								type="submit"-->
+<!--								formaction="?/completeTask"-->
+<!--								disabled={!uploadedImage ?? null}-->
+<!--						>Upload Image-->
+<!--						</Button>-->
+<!--					</div>-->
+<!--				</form>-->
 
 
-				<!--				<p>this might be helpful https://hartenfeller.dev/blog/sveltekit-image-upload-store</p>-->
-			</Modal>
+<!--				&lt;!&ndash;				<p>this might be helpful https://hartenfeller.dev/blog/sveltekit-image-upload-store</p>&ndash;&gt;-->
+<!--			</Modal>-->
 
 		</div>
 	</div>
