@@ -1,8 +1,15 @@
-import type { Actions } from './$types';
+import type { Actions, PageServerLoad } from './$types';
 import { database } from "../../lib/server/database/driver";
 import { error, fail, redirect } from "@sveltejs/kit";
 import bcrypt from 'bcrypt'
 import * as crypto from "crypto";
+
+export const load: PageServerLoad = async ({locals}) => {
+	// redirect user if not logged in
+	if (locals.user) {
+		throw redirect(302, '/dashboard')
+	}
+}
 
 export const actions = {
 	default: async ({cookies, request}) => {
