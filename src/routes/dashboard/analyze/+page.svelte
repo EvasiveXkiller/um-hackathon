@@ -36,9 +36,9 @@
 				<NumberInput min={0} step={0.1} label="Body Temp (In Fahrenheits)" required name="temp"/>
 				<NumberInput min={0} step={0.1} label="Heart Rate (BPM)" required name="hr"/>
 				<Spacer></Spacer>
-				<Button type="submit">Continue</Button>
+				<Button type="submit" style="border-radius: 20px; background-color: mediumpurple;">Continue</Button>
 				<Spacer/>
-				<Button href="/dashboard" kind="danger-tertiary">Cancel</Button>
+				<Button href="/dashboard" kind="danger-tertiary" style="border-radius: 20px;">Cancel</Button>
 			</Form>
 			<Spacer height="64px"/>
 		</div>
