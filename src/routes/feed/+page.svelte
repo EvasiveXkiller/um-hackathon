@@ -59,7 +59,7 @@
 					<p>{tiles.taskLikes} likes</p>
 					<Form method="POST" action="?/upvote">
 						<input type="hidden" name="taskId" value={tiles.taskId}/>
-						<Button iconDescription="Login" icon={ThumbsUpFilled} type="submit"/>
+						<Button iconDescription="Like this post" icon={ThumbsUpFilled} type="submit"/>
 					</Form>
 				</Tile>
 			{/each}

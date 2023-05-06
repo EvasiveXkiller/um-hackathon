@@ -30,7 +30,7 @@ export const load: PageServerLoad = async ({locals}) => {
 		}
 	})
 
-	return {feed: reformattedTasks};
+	return {feed: reformattedTasks.reverse()};
 }
 
 export const actions: Actions = {

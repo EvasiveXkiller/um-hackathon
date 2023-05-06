@@ -120,14 +120,14 @@
 										currentlySelectedTask = validTasks;
 										open = true;
 					                }}>{validTasks.taskName}</SelectableTile>
+					<Spacer/>
 				{/each}
 			</div>
 
 			<Modal
 					bind:open
 					modalHeading="Upload Image Modal"
-					primaryButtonText="Confirm"
-					secondaryButtonText="Cancel"
+					primaryButtonText="Cancel"
 					on:click:button--secondary={() => (open = false)}
 					on:open={() => {isSelected = false}}
 					on:close={() => {isSelected = false}}
