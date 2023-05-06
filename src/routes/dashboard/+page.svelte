@@ -42,7 +42,7 @@
 
 			<h1>Dashboard</h1>
 
-			<p>Here lies the lost thought of a midnight programmer</p>
+			<p>Your information, at a glance, with quick actions</p>
 
 			<h3>Your Details</h3>
 

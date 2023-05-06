@@ -19,7 +19,7 @@
 
 			<h1>Welcome!</h1>
 
-			<p>We have never been more excited to have you onboard! Just fill in a few short information to get
+			<p>We have never been more excited to have you onboard! Just fill in the below to get
 				started!</p>
 
 			{#if form?.exists}
@@ -40,7 +40,8 @@
 				<Spacer/>
 				<FormGroup legendText="Checkboxes">
 					<Checkbox id="checkbox-0"
-					          labelText="I agree to whatever is going on with my data and i wont sue you " required/>
+					          labelText="I agree to the Terms and Conditions (Can be found at link located at the end of the page)"
+					          required/>
 				</FormGroup>
 				<Spacer/>
 				<Button type="submit">Submit</Button>

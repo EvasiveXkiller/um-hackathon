@@ -55,25 +55,8 @@
 							<p>
 								<br>
 								New Life, A Pregnancy Management System catered to help improve the mother’s quality of
-								life
-							</p>
-						</div>
-						<div class="text-clamp text-justify">
-							<h3>Dont need to worry about your future</h3>
-							<Spacer height="16px"/>
-							<p>
-								Coz you dont have one
-
-								<br>
-
-								You want to read this barren paragraph and expect something marvelous and terrific at
-								the end. But since you still do not realize that you are wasting precious time, you
-								still continue to read the null paragraph. If you had not noticed, you have wasted an
-								estimated time of 20 seconds. Imagine what you could’ve done with those 20 seconds
-								besides reading this non-productive paragraph. Imagine the things you could’ve
-								accomplished. Imagine the possibilities. But time is irreversible and you still do not
-								realize this. Somehow you have managed still to waste around now 35 seconds reading this
-								stupid, excessive, and long paragraph with your irreversible time.
+								life. Now you do not need to dont need to worry about your future. Let us figure all the
+								details out, while you can spend the best time with your infant in your womb
 							</p>
 						</div>
 					</div>
