@@ -1,6 +1,6 @@
 # AMS
 
-> This stand for Aaron;s Maternity System
+> This stand for Aaron's Maternity System
 
 Dont ask me why is this name
 (Probably Aaron is getting married)
