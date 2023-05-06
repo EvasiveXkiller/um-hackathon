@@ -44,12 +44,12 @@
 					          required/>
 				</FormGroup>
 				<Spacer/>
-				<Button type="submit">Submit</Button>
+				<Button type="submit" style="border-radius: 20px; background-color:mediumpurple;">Submit</Button>
 			</FluidForm>
 
 			<h3>Have an account?</h3>
 			<p>
-				<Button href="/login">Login</Button>
+				<Button href="/login" style="border-radius: 20px; background-color:mediumpurple;">Login</Button>
 			</p>
 			<Spacer/>
 		</div>

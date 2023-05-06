@@ -34,8 +34,8 @@
 				</FormGroup>
 				<Spacer/>
 				<FormGroup>
-					<Button size="default" type="submit">Submit</Button>
-					<Button size="default" kind="secondary" href='/register'>Register</Button>
+					<Button size="default" type="submit" style="border-radius: 20px; background-color:mediumpurple;">Submit</Button>
+					<Button size="default" kind="secondary" href='/register' style="border-radius: 20px; background-color:gray">Register</Button>
 				</FormGroup>
 
 

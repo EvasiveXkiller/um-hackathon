@@ -68,11 +68,11 @@
 
 
 					{#if data.percentageComplete >= 33.33}
-						<Button href="https://commons.wikimedia.org/wiki/File:Test-Logo.svg" target="_blank">Make a
+						<Button href="https://commons.wikimedia.org/wiki/File:Test-Logo.svg" target="_blank" style="border-radius: 20px; background-color: mediumpurple;">Make a
 							drawing
 						</Button>
 					{:else}
-						<Button disabled href="https://commons.wikimedia.org/wiki/File:Test-Logo.svg" target="_blank">
+						<Button disabled href="https://commons.wikimedia.org/wiki/File:Test-Logo.svg" target="_blank" style="border-radius: 20px; background-color: mediumpurple; color: white;">
 							Make a
 							drawing
 						</Button>
@@ -81,9 +81,9 @@
 					<Spacer></Spacer>
 
 					{#if data.percentageComplete > 66.66}
-						<Button href="https://www.youtube.com/watch?v=cvh0nX08nRw" target="_blank">Play Music</Button>
+						<Button href="https://www.youtube.com/watch?v=cvh0nX08nRw" target="_blank" style="border-radius: 20px; background-color: mediumpurple; color: white;">Play Music</Button>
 					{:else}
-						<Button disabled href="https://www.youtube.com/watch?v=cvh0nX08nRw" target="_blank">Play Music
+						<Button disabled href="https://www.youtube.com/watch?v=cvh0nX08nRw" target="_blank" style="border-radius: 20px; background-color: mediumpurple; color: white;">Play Music
 						</Button>
 					{/if}
 
@@ -94,7 +94,7 @@
 						<div slot="below" style="height: auto">
 							<div>This is here for development purposes only</div>
 							<Spacer/>
-							<Button size="small" on:click={() => (data.percentageComplete = 0)}>1st Trisemeter</Button>
+							<Button size="small" on:click={() => (data.percentageComplete = 0)} >1st Trisemeter</Button>
 							<Spacer/>
 							<Button size="small" on:click={() => (data.percentageComplete = 50)}>2nd Trisemeter</Button>
 							<Spacer/>

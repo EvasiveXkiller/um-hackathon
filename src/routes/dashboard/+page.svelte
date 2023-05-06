@@ -47,13 +47,13 @@
 			<h3>Your Details</h3>
 
 			<Form method="POST" action="/logout?/GET">
-				<Button href="/dashboard/analyze">Analyze your status</Button>
+				<Button href="/dashboard/analyze" style="border-radius: 20px; background-color: mediumpurple;">Analyze your status</Button>
 				<Spacer></Spacer>
-				<Button href="/house">House</Button>
+				<Button href="/house" style="border-radius: 20px; background-color: mediumpurple;">House</Button>
 				<Spacer></Spacer>
-				<Button href="/feed">Feed</Button>
+				<Button href="/feed" style="border-radius: 20px; background-color: mediumpurple;">Feed</Button>
 				<Spacer></Spacer>
-				<Button type="submit" kind="danger-tertiary">Logout</Button>
+				<Button type="submit" kind="danger-tertiary" style="border-radius: 20px;">Logout</Button>
 			</Form>
 
 			<StructuredList>
