@@ -20,8 +20,16 @@
 			link: '/dashboard'
 		},
 		{
+			text: 'House',
+			link: '/house'
+		},
+		{
 			text: 'Shop',
 			link: '/dashboard/shop'
+		},
+		{
+			text: 'Analyze',
+			link: '/dashboard/analyze'
 		},
 	];
 </script>
