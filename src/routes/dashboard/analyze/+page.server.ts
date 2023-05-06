@@ -52,7 +52,7 @@ export const actions = {
 			Object.entries(p).map(kv => kv.map(encodeURIComponent).join("=")).join("&");
 
 		// Send to compute page to make it inference the data, has to be in this format since i cannot get it to work in the backed
-		throw redirect(301, `/compute?${encodeGetParams(toSend)}}`)
+		throw redirect(301, `/compute?${encodeGetParams(toSend)}`)
 
 		// Dead code
 		// //Build the request

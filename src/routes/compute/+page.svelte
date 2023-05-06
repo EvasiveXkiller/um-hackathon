@@ -14,7 +14,14 @@
 		const queryString = window.location.search;
 		const urlParams = new URLSearchParams(queryString);
 
-		const values = [urlParams.get('age'), urlParams.get('sys'), urlParams.get('dias'), urlParams.get('sugar'), urlParams.get('temp'), urlParams.get('hr')]
+		let values = [
+			parseFloat(urlParams.get('age')),
+			parseFloat(urlParams.get('sys')),
+			parseFloat(urlParams.get('dias')),
+			parseFloat(urlParams.get('sugar')),
+			parseFloat(urlParams.get('temp')),
+			parseFloat(urlParams.get('hr'))
+		]
 		console.log(values)
 		const classes = ["Low Risk", "Medium Risk", "High Risk"]
 

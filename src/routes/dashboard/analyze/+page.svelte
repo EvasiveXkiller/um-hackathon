@@ -30,11 +30,11 @@
 			<p>Enter the following data, to be analyzed by our AI model</p>
 
 			<Form on:submit method="POST">
-				<NumberInput min={0} step={0.1} label="Systolic Blood Pressure (mmHg)" required name="systolic"/>
-				<NumberInput min={0} step={0.1} label="Diastolic Blood Pressure (mmHh)" required name="diastolic"/>
-				<NumberInput min={0} step={0.1} label="Blood Sugar (mmol/L)" required name="sugar"/>
-				<NumberInput min={0} step={0.1} label="Body Temp (In Fahrenheits)" required name="temp"/>
-				<NumberInput min={0} step={0.1} label="Heart Rate (BPM)" required name="hr"/>
+				<NumberInput min={0} step={0.01} label="Systolic Blood Pressure (mmHg)" required name="systolic"/>
+				<NumberInput min={0} step={0.01} label="Diastolic Blood Pressure (mmHg)" required name="diastolic"/>
+				<NumberInput min={0} step={0.01} label="Blood Sugar (mmol/L)" required name="sugar"/>
+				<NumberInput min={0} step={0.01} label="Body Temp (In Fahrenheits)" required name="temp"/>
+				<NumberInput min={0} step={0.01} label="Heart Rate (BPM)" required name="hr"/>
 				<Spacer></Spacer>
 				<Button type="submit" style="border-radius: 20px; background-color: mediumpurple;">Continue</Button>
 				<Spacer/>
