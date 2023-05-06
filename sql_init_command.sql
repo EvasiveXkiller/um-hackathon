@@ -11,3 +11,14 @@ create table main.users
     diseases      text
 );
 
+create table main.currentReadings
+(
+    id          text,
+    sys_bp      text,
+    dias_bp     text,
+    blood_sugar text,
+    temp        text,
+    hr          text
+);
+
+
