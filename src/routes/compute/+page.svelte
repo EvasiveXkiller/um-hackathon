@@ -22,13 +22,13 @@
 		await sess.loadModel("src/lib/onnx/onnx_model.onnx")
 
 		let total = 0;
-		for(let i = 0; i < values.length; i++) {
+		for (let i = 0; i < values.length; i++) {
 			total += values[i];
 		}
 		let avg = total / values.length;
 		let std = getStandardDeviation(values)
 		// Get standard score
-		for(let i = 0; i < values.length; i++) {
+		for (let i = 0; i < values.length; i++) {
 			values[i] = (values[i] - avg) / std
 		}
 
