@@ -35,6 +35,10 @@ create table main.users
     height        text,
     weight        text,
     diseases      text,
-    displayName   text
+    displayName   text,
+    childName     text,
+    babyName      text,
+    expectedDate  text
 );
+
 
