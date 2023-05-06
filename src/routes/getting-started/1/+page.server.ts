@@ -1,6 +1,7 @@
 import { fail, redirect } from '@sveltejs/kit'
 import type { Actions, PageServerLoad } from './$types'
 import { database } from "../../../lib/server/database/driver";
+import { v4 as uuidv4 } from 'uuid';
 
 let ID = 0;
 
@@ -40,8 +41,9 @@ export const actions = {
 		]
 
 		for (const itask of validTasks) {
-			database.prepare('INSERT INTO tasks (id, taskName, taskCompleted, currentlyActive) VALUES (@id, @taskName, @taskCompleted, @currentlyActive)').run({
-				id: ID,
+			database.prepare('INSERT INTO tasks (userid, taskid, taskName, taskCompleted, currentlyActive) VALUES (@userid, @taskid, @taskName, @taskCompleted, @currentlyActive)').run({
+				userid: ID,
+				taskid: uuidv4().toString(),
 				taskName: itask,
 				taskCompleted: 0,
 				currentlyActive: 0,

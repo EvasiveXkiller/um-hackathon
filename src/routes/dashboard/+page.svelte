@@ -47,7 +47,9 @@
 				<Spacer></Spacer>
 				<Button href="/dashboard/update-health">Update your health status here</Button>
 				<Spacer></Spacer>
-				<Button type="submit">Logout</Button>
+				<Button href="/feed">Feed</Button>
+				<Spacer></Spacer>
+				<Button type="submit" kind="danger-tertiary">Logout</Button>
 			</Form>
 
 			<StructuredList>
@@ -104,7 +106,7 @@
 
 				<form method="post" enctype="multipart/form-data">
 					<input type="hidden" name="taskName" value={currentlySelectedTask.taskName}/>
-					<input type="hidden" name="userID" value={currentlySelectedTask.id}/>
+					<input type="hidden" name="userID" value={currentlySelectedTask.userid}/>
 					<input type="file" name="taskImage" accept="image/*" on:change={handleImageUpload}/>
 
 					{#if uploadedImage}

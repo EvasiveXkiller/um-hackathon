@@ -31,7 +31,7 @@
 					<TextInput labelText="Email Address" placeholder="joe@example.com" required name="email"/>
 					<Spacer></Spacer>
 					<TextInput labelText="Display Name" placeholder="Make a memorable one ..." required
-					           name="displayname"/>
+					           name="displayName"/>
 					<Spacer></Spacer>
 					<PasswordInput labelText="Password" placeholder="Enter password..." required name="password"/>
 				</FormGroup>

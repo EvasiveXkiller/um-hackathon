@@ -10,7 +10,7 @@ export const load: PageServerLoad = async ({locals}) => {
 
 	const user = database.prepare('SELECT * FROM users WHERE id = ?').get(locals.user.id)
 
-	const userTask = database.prepare('SELECT * FROM tasks WHERE id = ?').all(locals.user.id)
+	const userTask = database.prepare('SELECT * FROM tasks WHERE userid = ?').all(locals.user.id)
 
 	const isTasksReady = userTask.map(task => !Number(task.currentlyActive) == 0)
 
@@ -26,11 +26,14 @@ export const load: PageServerLoad = async ({locals}) => {
 				{key: "weight", value: user.weight},
 				{key: "disease", value: user.diseases},
 				{key: "height", value: user.height},
+				{key: "displayName", value: user.displayName},
 			],
 			userTasks: userTask.map(task => {
 				return {
+					userid: task.userid,
+					taskId: task.taskId,
 					taskName: task.taskName,
-					taskCompleted : task.taskCompleted,
+					taskCompleted: task.taskCompleted,
 					currentlyActive: task.currentlyActive
 				}
 			}),
@@ -57,11 +60,17 @@ export const actions: Actions = {
 			// albumImage?.arrayBuffer() // ArrayBuffer with the file contents
 		);
 
+		console.log(taskName, userID)
+
 		const arrayBuffer = await albumImage.arrayBuffer();
 		const buffer = Buffer.from(arrayBuffer);
 
-		database.prepare('UPDATE tasks SET taskCompleted = 1, imageProof = (@buffer) WHERE taskName = (@taskName) AND id = (@id)').run({
+		database.prepare('UPDATE tasks SET taskCompleted = 1, imageData = (@buffer), imageFileName = (@imageName), imageLastModified = (@imageLastModified), imageMimeType = (@imageMimeType), imageSize = (@imageSize) WHERE taskName = (@taskName) AND userid = (@id)').run({
 			taskName: taskName,
+			imageName: albumImage.name,
+			imageLastModified: albumImage.lastModified,
+			imageMimeType: albumImage.type,
+			imageSize: albumImage.size,
 			id: userID,
 			buffer: buffer
 		})
