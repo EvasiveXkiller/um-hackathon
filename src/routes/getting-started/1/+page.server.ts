@@ -27,15 +27,17 @@ export const actions = {
 		const babyName = data.get('babyName')
 		const lastCycleDate = data.get('lastCycleDate');
 
+		const lastCycleDateFormatted = DateTime.fromFormat(lastCycleDate as string, 'D').toSQLDate()
 		const time = DateTime.fromFormat(lastCycleDate as string, 'D').plus({days: 273}).toSQLDate()
 
 		// Since we are in OOBE mode, we create all the new tasks and enable them to be completed
-		database.prepare('UPDATE users SET age = (@age), height = (@height), weight = (@weight), babyName = (@baby), expectedDate = (@expected) WHERE id = (@id)').run({
+		database.prepare('UPDATE users SET age = (@age), height = (@height), weight = (@weight), babyName = (@baby), expectedDate = (@expected), lastCycle = (@lastCycle) WHERE id = (@id)').run({
 			age,
 			height,
 			weight,
 			baby: babyName,
 			expected: time,
+			lastCycle: lastCycleDateFormatted,
 			id: ID
 		})
 

@@ -50,7 +50,7 @@
 				</DatePicker>
 				<Spacer></Spacer>
 				<Button type="submit">Continue</Button>
-				<Spacer height="128px"></Spacer>
+				<Spacer height="200px"></Spacer>
 
 			</FluidForm>
 		</div>
