@@ -75,7 +75,8 @@
 					on:close={() => {isSelected = false}}
 					on:submit
 			>
-				<p>insert upload logic here</p>
+				<h1>Please upload your image of your task here</h1>
+				<p>This is to proof that you have completed your task</p>
 				<p>this might be helpful https://hartenfeller.dev/blog/sveltekit-image-upload-store</p>
 			</Modal>
 

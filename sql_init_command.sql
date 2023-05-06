@@ -21,4 +21,14 @@ create table main.currentReadings
     hr          text
 );
 
+create table main.tasks
+(
+    id              text,
+    taskName        text,
+    taskCompleted   text,
+    imageProof      blob,
+    currentlyActive text
+);
+
+
 
