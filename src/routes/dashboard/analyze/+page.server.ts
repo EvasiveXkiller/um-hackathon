@@ -3,6 +3,7 @@ import type { Actions, PageServerLoad } from './$types'
 import { database } from "../../../lib/server/database/driver";
 import fetch from "node-fetch";
 
+// This is used to protect the route, ensuring authentication
 let ID;
 export const load: PageServerLoad = async ({locals}) => {
 	// redirect user if not logged in
@@ -46,10 +47,14 @@ export const actions = {
 			hr: Number(hr)
 		}
 
+		// Function to encode into URL params
 		const encodeGetParams = p =>
 			Object.entries(p).map(kv => kv.map(encodeURIComponent).join("=")).join("&");
 
+		// Send to compute page to make it inference the data, has to be in this format since i cannot get it to work in the backed
 		throw redirect(301, `/compute?${encodeGetParams(toSend)}}`)
+
+		// Dead code
 		// //Build the request
 		// const response = await fetch("127.0.0.1:5555/api/v1/aaronloveszijian", {
 		// 	method: "POST",

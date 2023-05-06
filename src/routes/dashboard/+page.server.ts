@@ -8,15 +8,20 @@ export const load: PageServerLoad = async ({locals}) => {
 		throw redirect(302, '/login')
 	}
 
+	// We get all the user detail
 	const user = database.prepare('SELECT * FROM users WHERE id = ?').get(locals.user.id)
 
+	// We get all the user tasks
 	const userTask = database.prepare('SELECT * FROM tasks WHERE userid = ?').all(locals.user.id)
 
+	// We check if the tasks are active of not
 	const isTasksReady = userTask.map(task => !Number(task.currentlyActive) == 0)
 
+	// If age is empty, then go to OOBE mode
 	if (!user.age) {
 		throw redirect(302, '/getting-started/1')
 	} else {
+		// else we return all the data to hydrate the page itself
 		return {
 			userData: [
 				{key: "id", value: user.id},
@@ -43,28 +48,22 @@ export const load: PageServerLoad = async ({locals}) => {
 }
 
 export const actions: Actions = {
+	// This named action happens when the task is completed
 	completeTask: async ({request, locals}) => {
 		const data = await request.formData();
 
+		// get all the form data
 		const taskName = data.get('taskName')?.toString();
 		const userID = data.get('userID')?.toString();
 
-		console.log("reached")
+		// get the image as a File
 		const albumImage = data.get('taskImage')?.valueOf() as File;
 
-		console.log(
-			albumImage?.name, // filename
-			albumImage?.type, // mime type
-			albumImage?.size, // file size in bytes
-			albumImage?.lastModified // last modified date
-			// albumImage?.arrayBuffer() // ArrayBuffer with the file contents
-		);
-
-		console.log(taskName, userID)
-
+		// Convert it into buffer
 		const arrayBuffer = await albumImage.arrayBuffer();
 		const buffer = Buffer.from(arrayBuffer);
 
+		// Write to the database with all the new information, and set the status to completed
 		database.prepare('UPDATE tasks SET taskCompleted = 1, imageData = (@buffer), imageFileName = (@imageName), imageLastModified = (@imageLastModified), imageMimeType = (@imageMimeType), imageSize = (@imageSize) WHERE taskName = (@taskName) AND userid = (@id)').run({
 			taskName: taskName,
 			imageName: albumImage.name,

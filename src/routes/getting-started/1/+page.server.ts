@@ -18,10 +18,13 @@ export const load: PageServerLoad = async ({locals}) => {
 export const actions = {
 	default: async ({cookies, request}) => {
 		const data = await request.formData();
+
+		// Get the form data
 		const age = data.get('age');
 		const height = data.get('height');
 		const weight = data.get('weight');
 
+		// Since we are in OOBE mode, we create all the new tasks and enable them to be completed
 		database.prepare('UPDATE users SET age = (@age), height = (@height), weight = (@weight) WHERE id = (@id)').run({
 			age,
 			height,
@@ -40,13 +43,14 @@ export const actions = {
 			'Cook Breakfast'
 		]
 
+		// Insert task into the table
 		for (const itask of validTasks) {
 			database.prepare('INSERT INTO tasks (userid, taskid, taskName, taskCompleted, currentlyActive) VALUES (@userid, @taskid, @taskName, @taskCompleted, @currentlyActive)').run({
 				userid: ID,
 				taskid: uuidv4().toString(),
 				taskName: itask,
 				taskCompleted: 0,
-				currentlyActive: 0,
+				currentlyActive: 1,
 			});
 		}
 

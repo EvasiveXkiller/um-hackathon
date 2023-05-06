@@ -12,6 +12,7 @@ export const load: PageServerLoad = async ({locals}) => {
 	}
 }
 
+// TODO Andrew, kindly make the shop not stealing money from people
 export const actions = {
 	default: async ({cookies, request}) => {
 		const data = await request.formData();

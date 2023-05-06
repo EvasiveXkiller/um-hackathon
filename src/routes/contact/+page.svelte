@@ -1,3 +1,4 @@
+<!--Unused-->
 <script>
 	import {
 		Breakpoint,
@@ -9,7 +10,7 @@
 <svelte:head>
 	<title>Contact</title>
 </svelte:head>
-<Breakpoint on:match={(e) => (breakpoint = e.detail.size)} />
+<Breakpoint on:match={(e) => (breakpoint = e.detail.size)}/>
 
 <container class="w-screen grid place-items-center">
 	<div class="centerRenderer">
@@ -19,5 +20,5 @@
 
 		</div>
 	</div>
-	<Spacer height="64px" />
+	<Spacer height="64px"/>
 </container>

@@ -9,7 +9,7 @@ export const load: PageServerLoad = async ({locals}) => {
 	if (!locals.user) {
 		throw redirect(302, '/')
 	} else {
-		 ID = locals.user.id
+		ID = locals.user.id
 	}
 
 }
@@ -17,6 +17,8 @@ export const load: PageServerLoad = async ({locals}) => {
 export const actions = {
 	default: async ({cookies, request}) => {
 		const data = await request.formData();
+
+		// Get the selected diseases and insert into DB
 		const allSelectedDiseases = data.getAll('diseases');
 
 		database.prepare('UPDATE users SET diseases = (@selectedStuff) WHERE id = (@id)').run({
