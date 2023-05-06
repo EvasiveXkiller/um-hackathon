@@ -19,7 +19,7 @@
 		const classes = ["Low Risk", "Medium Risk", "High Risk"]
 
 		const sess = new onnx.InferenceSession()
-		await sess.loadModel("src/lib/onnx/onnx_model.onnx")
+		await sess.loadModel("./onnx/onnx_model.onnx")
 
 		let total = 0;
 		for (let i = 0; i < values.length; i++) {
