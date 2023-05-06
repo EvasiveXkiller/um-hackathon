@@ -68,11 +68,11 @@
 
 
 					{#if data.percentageComplete >= 33.33}
-						<Button href="https://commons.wikimedia.org/wiki/File:Test-Logo.svg" target="_blank" style="border-radius: 20px; background-color: mediumpurple;">Make a
+						<Button href="https://unsplash.com/s/photos/random" target="_blank" style="border-radius: 20px; background-color: mediumpurple;">Make a
 							drawing
 						</Button>
 					{:else}
-						<Button disabled href="https://commons.wikimedia.org/wiki/File:Test-Logo.svg" target="_blank" style="border-radius: 20px; background-color: mediumpurple; color: white;">
+						<Button disabled href="https://unsplash.com/s/photos/random" target="_blank" style="border-radius: 20px; background-color: mediumpurple; color: white;">
 							Make a
 							drawing
 						</Button>
@@ -81,9 +81,9 @@
 					<Spacer></Spacer>
 
 					{#if data.percentageComplete > 66.66}
-						<Button href="https://www.youtube.com/watch?v=cvh0nX08nRw" target="_blank" style="border-radius: 20px; background-color: mediumpurple; color: white;">Play Music</Button>
+						<Button href="https://www.youtube.com/watch?v=6yMYepfH6c4" target="_blank" style="border-radius: 20px; background-color: mediumpurple; color: white;">Play Music</Button>
 					{:else}
-						<Button disabled href="https://www.youtube.com/watch?v=cvh0nX08nRw" target="_blank" style="border-radius: 20px; background-color: mediumpurple; color: white;">Play Music
+						<Button disabled href="https://www.youtube.com/watch?v=6yMYepfH6c4" target="_blank" style="border-radius: 20px; background-color: mediumpurple; color: white;">Play Music
 						</Button>
 					{/if}
 
