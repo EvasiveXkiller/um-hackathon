@@ -77,7 +77,7 @@
 				<div style="max-width: 250px">
 
 
-					{#if data.percentageComplete >= 33.33 && data.percentageComplete <= 66.66}
+					{#if data.percentageComplete >= 33.33}
 						<Button href="https://commons.wikimedia.org/wiki/File:Test-Logo.svg" target="_blank">Make a
 							drawing
 						</Button>
