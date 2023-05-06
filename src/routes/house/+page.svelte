@@ -16,7 +16,7 @@
 		StructuredListBody,
 		StructuredList,
 		InlineNotification,
-		NotificationActionButton, ImageLoader, InlineLoading,
+		NotificationActionButton, ImageLoader, InlineLoading, Tile, ExpandableTile,
 	} from "carbon-components-svelte";
 	import first from "$lib//assets/home/first.png"
 	import second from "$lib//assets/home/second.png"
@@ -100,6 +100,23 @@
 					{/if}
 
 					<Spacer></Spacer>
+
+					<ExpandableTile>
+						<div slot="above">Dev Controls</div>
+						<div slot="below" style="height: auto">
+							<div>This is here for development purposes only</div>
+							<Spacer/>
+							<Button size="small" on:click={() => (data.percentageComplete = 0)}>1st Trisemeter</Button>
+							<Spacer/>
+							<Button size="small" on:click={() => (data.percentageComplete = 50)}>2nd Trisemeter</Button>
+							<Spacer/>
+							<Button size="small" on:click={() => (data.percentageComplete = 100)}>3rd Trisemeter
+							</Button>
+							<Spacer/>
+						</div>
+
+					</ExpandableTile>
+
 
 				</div>
 			</div>
