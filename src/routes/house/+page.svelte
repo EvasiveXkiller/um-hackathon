@@ -133,7 +133,7 @@
 
 			<Modal
 					bind:open
-					modalHeading="Upload Image Modal"
+					modalHeading="Upload Image"
 					primaryButtonText="Cancel"
 					on:click:button--secondary={() => (open = false)}
 					on:open={() => {isSelected = false}}
