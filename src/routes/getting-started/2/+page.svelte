@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-	<title>Pricing</title>
+	<title>Welcome !</title>
 </svelte:head>
 <Breakpoint on:match={(e) => (breakpoint = e.detail.size)}/>
 

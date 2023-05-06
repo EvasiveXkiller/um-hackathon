@@ -38,7 +38,9 @@
 		uploadedImage = URL.createObjectURL(image);
 	}
 </script>
-
+<svelte:head>
+	<title>Feed</title>
+</svelte:head>
 <container class="w-screen grid place-items-center">
 	<Spacer height="64px"/>
 	<div class="centerRenderer">

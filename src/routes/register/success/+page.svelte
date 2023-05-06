@@ -9,7 +9,9 @@
 	import { redirect } from "@sveltejs/kit";
 
 </script>
-
+<svelte:head>
+	<title>Registration Success!</title>
+</svelte:head>
 <container class="w-screen grid place-items-center">
 	<Spacer height="64px"/>
 	<div class="centerRenderer">

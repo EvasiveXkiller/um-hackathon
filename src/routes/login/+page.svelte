@@ -9,7 +9,9 @@
 
 	export let form;
 </script>
-
+<svelte:head>
+	<title>Login</title>
+</svelte:head>
 <container class="w-screen grid place-items-center">
 	<Spacer height="64px"/>
 	<div class="centerRenderer">

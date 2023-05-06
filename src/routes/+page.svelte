@@ -5,7 +5,9 @@
 		Button, ImageLoader, Theme,
 	} from "carbon-components-svelte";
 </script>
-
+<svelte:head>
+	<title>AMS</title>
+</svelte:head>
 <container class="w-screen grid place-items-center">
 	<div class="centerRenderer">
 		<div class="flex flex-col gap-6" style="width: 85vw">

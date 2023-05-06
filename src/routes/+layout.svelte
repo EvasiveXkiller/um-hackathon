@@ -3,8 +3,8 @@
 	import 'carbon-components-svelte/css/white.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { page } from '$app/stores'
 	import { Theme } from "carbon-components-svelte";
+	import favicon from "$lib//assets/favicon.png"
 
 	export let segment;
 
@@ -20,6 +20,10 @@
     "active-primary": "#6929C4",
   }}
 />
+
+<svelte:head>
+	<link rel="icon" href={favicon} />
+</svelte:head>
 
 <Header {segment}/>
 

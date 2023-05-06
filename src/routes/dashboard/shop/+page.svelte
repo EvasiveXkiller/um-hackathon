@@ -8,18 +8,22 @@
 	import Spacer from "$lib/components/Spacer.svelte";
 	import piano from '$lib/assets/image 16.png'
 	import pen from '$lib/assets/image 17.png'
-	
-	
+
+
 	let open = false;
 	export let form = {};
 
-	const images = [piano,pen];
+	const images = [piano, pen];
 	const descriptions = [
 		'With piano skills, your child would be able to play music pieces for you!',
 		'Learning how to write could be tough, but with patience and guidance, your child would love to write!'
 	]
 	const titles = ["Piano", "Writing"];
 </script>
+
+<svelte:head>
+	<title>Talent Shop</title>
+</svelte:head>
 
 <container class="w-screen grid place-items-center">
 	<Spacer height="64px"/>
@@ -44,13 +48,12 @@
 							</div>
 							<div class="w-full"><img src={image} alt={'Image ${index + 1}'} class="w-full"></div>
 						</div>
-							
 
-						
+
 					</Tile>
 
 				{/each}
-				
+
 			</div>
 
 
