@@ -22,7 +22,7 @@
 			<p>You have been registered!</p>
 			<p>Click the below button to login</p>
 
-			<Button href="/login">Login</Button>
+			<Button href="/login" style="border-radius: 20px; background-color:mediumpurple">Login</Button>
 		</div>
 	</div>
 	<Spacer height="64px"/>

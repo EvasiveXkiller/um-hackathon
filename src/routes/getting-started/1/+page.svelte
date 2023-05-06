@@ -49,7 +49,7 @@
 					<DatePickerInput placeholder="mm/dd/yyyy" name="lastCycleDate"/>
 				</DatePicker>
 				<Spacer></Spacer>
-				<Button type="submit">Continue</Button>
+				<Button style="border-radius: 20px; background-color: mediumpurple;" type="submit" >Continue</Button>
 				<Spacer height="200px"></Spacer>
 
 			</FluidForm>

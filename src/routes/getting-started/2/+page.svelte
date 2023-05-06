@@ -65,7 +65,7 @@
 				/>
 				<input type="hidden" name="diseases" value={selectedDiseases.toString()}/>
 				<Spacer></Spacer>
-				<Button type="submit">Continue</Button>
+				<Button type="submit" style="border-radius: 20px; background-color: mediumpurple;">Continue</Button>
 			</Form>
 		</div>
 	</div>
