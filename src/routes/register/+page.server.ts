@@ -9,6 +9,7 @@ export const actions = {
 		const data = await request.formData();
 		const email = data.get('email');
 		const password = data.get('password');
+		const displayName = data.get('displayName');
 
 		const ifUserExists = database.prepare('SELECT * FROM users where email = (?)').all(email)
 
@@ -17,9 +18,10 @@ export const actions = {
 		}
 
 		const passwordHashed = await bcrypt.hash(password, 10);
-		database.prepare('INSERT INTO users (id, email, password, userAuthToken) VALUES (@id, @email, @password, @authToken)').run({
+		database.prepare('INSERT INTO users (id, displayName ,email, password, userAuthToken) VALUES (@id, @displayName, @email, @password, @authToken)').run({
 			id: uuidv4().toString(),
 			email,
+			displayName,
 			password: passwordHashed,
 			authToken: crypto.randomUUID()
 		})
