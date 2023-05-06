@@ -42,4 +42,8 @@ An editor such as [HeidiSQL](https://www.heidisql.com/) is required to run the c
 
 Team Sunway @ University Malaya 2023
 
-[should we insert name here?]
+Aaron Liew Jun Wei <br />
+Carlson Tan Jian Xiang <br />
+Elvyana Ee Yuet Suen <br />
+Kho Zi Jian <br />
+Khor Zun Xiong

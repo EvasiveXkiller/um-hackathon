@@ -20,7 +20,7 @@
 
 					<Spacer/>
 					<div class="bottom">
-						<p>New Life, A Pregnancy Management System catered too help improve the mother's quality of life</p>
+						<p>AMS, a Pregnancy Management System catered to help improve the mother's quality of life</p>
 					</div>
 					<Spacer height="32px"/>
 					<div class="morebottom">

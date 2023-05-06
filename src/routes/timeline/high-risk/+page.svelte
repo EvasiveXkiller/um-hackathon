@@ -106,7 +106,7 @@
 			</OrderedList>
 
 
-			<Button href="/dashboard">Back to Dashboard</Button>
+			<Button href="/dashboard" style="border-radius: 20px; background-color: mediumpurple;">Back to Dashboard</Button>
 
 		</div>
 	</div>
