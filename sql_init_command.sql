@@ -38,7 +38,9 @@ create table main.users
     displayName   text,
     childName     text,
     babyName      text,
-    expectedDate  text
+    expectedDate  text,
+    lastCycle     text
 );
+
 
 
