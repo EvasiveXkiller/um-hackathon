@@ -26,9 +26,17 @@ export const actions = {
 			return {success: false, message: 'Insufficient funds'}
 		}
 
+		database.transaction(() =>{
+			database
+			.prepare(
+				"UPDATE users SET coins = ? WHERE id= ?"
+			)
+			.run(deductedCoins, ID);
+		}) 
 		database.prepare('UPDATE users SET coins = (@coins) WHERE id = (@id)').run({
 			coins: deductedCoins,
 			id: ID
+		
 		})
 
 		return {success: true, coins: deductedCoins}

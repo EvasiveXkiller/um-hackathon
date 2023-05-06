@@ -1,4 +1,4 @@
-create table main.currentReadings
+npcreate table main.currentReadings
 (
     id          text,
     sys_bp      text,
