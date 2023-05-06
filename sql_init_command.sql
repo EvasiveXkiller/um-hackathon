@@ -1,16 +1,3 @@
-create table main.users
-(
-    id            text not null,
-    email         text not null,
-    password      text not null,
-    userAuthToken text not null,
-    coins         integer default 100,
-    age           integer,
-    height        text,
-    weight        text,
-    diseases      text
-);
-
 create table main.currentReadings
 (
     id          text,
@@ -23,12 +10,30 @@ create table main.currentReadings
 
 create table main.tasks
 (
-    id              text,
-    taskName        text,
-    taskCompleted   text,
-    imageProof      blob,
-    currentlyActive text
+    userid            text,
+    taskName          text,
+    taskCompleted     text,
+    imageData         blob,
+    currentlyActive   text,
+    taskid            text,
+    likes             integer,
+    imageFileName     text,
+    imageMimeType     text,
+    imageLastModified integer default (strftime('%s', 'now') * 1000),
+    imageSize         integer
 );
 
-
+CREATE TABLE "users"
+(
+    id            text not null,
+    email         text not null,
+    password      text not null,
+    userAuthToken text not null,
+    coins         integer default 100,
+    age           integer,
+    height        text,
+    weight        text,
+    diseases      text,
+    displayName   text
+)
 
