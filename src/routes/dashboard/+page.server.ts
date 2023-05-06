@@ -24,14 +24,16 @@ export const load: PageServerLoad = async ({locals}) => {
 		// else we return all the data to hydrate the page itself
 		return {
 			userData: [
-				{key: "id", value: user.id},
-				{key: "email", value: user.email},
-				{key: "coins", value: user.coins},
-				{key: "age", value: user.age},
-				{key: "weight", value: user.weight},
-				{key: "disease", value: user.diseases},
-				{key: "height", value: user.height},
-				{key: "displayName", value: user.displayName},
+				{key: "User ID", value: user.id},
+				{key: "User Name", value: user.displayName},
+				{key: "Email", value: user.email},
+				{key: "Baby Name", value: user.babyName},
+				{key: "Expected Date", value: user.expectedDate},
+				{key: "Coins", value: user.coins},
+				{key: "Age", value: user.age},
+				{key: "Weight (KG)", value: user.weight},
+				{key: "Height (CM)", value: user.height},
+				{key: "Diseases", value: user.diseases},
 			],
 			userTasks: userTask.map(task => {
 				return {

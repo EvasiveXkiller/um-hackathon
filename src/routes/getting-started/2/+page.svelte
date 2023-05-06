@@ -6,7 +6,7 @@
 	import {
 		Breakpoint,
 		Button,
-		Checkbox,
+		Checkbox, DatePicker, DatePickerInput,
 		Form,
 		FormGroup,
 		MultiSelect,

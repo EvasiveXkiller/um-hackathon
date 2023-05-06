@@ -2,6 +2,7 @@ import { fail, redirect } from '@sveltejs/kit'
 import type { Actions, PageServerLoad } from './$types'
 import { database } from "../../../lib/server/database/driver";
 import { v4 as uuidv4 } from 'uuid';
+import { DateTime } from "luxon";
 
 let ID = 0;
 
@@ -23,12 +24,18 @@ export const actions = {
 		const age = data.get('age');
 		const height = data.get('height');
 		const weight = data.get('weight');
+		const babyName = data.get('babyName')
+		const lastCycleDate = data.get('lastCycleDate');
+
+		const time = DateTime.fromFormat(lastCycleDate as string, 'D').plus({days: 273}).toSQLDate()
 
 		// Since we are in OOBE mode, we create all the new tasks and enable them to be completed
-		database.prepare('UPDATE users SET age = (@age), height = (@height), weight = (@weight) WHERE id = (@id)').run({
+		database.prepare('UPDATE users SET age = (@age), height = (@height), weight = (@weight), babyName = (@baby), expectedDate = (@expected) WHERE id = (@id)').run({
 			age,
 			height,
 			weight,
+			baby: babyName,
+			expected: time,
 			id: ID
 		})
 
