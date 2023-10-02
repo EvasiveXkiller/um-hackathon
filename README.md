@@ -1,9 +1,6 @@
-# AMS
+# UM Hackathon Maternity System
 
-> This stand for Aaron's Maternity System
-
-Dont ask me why is this name
-(Probably Aaron is getting married)
+> University Malaya Hackathon Maternity System
 
 # How to use
 
